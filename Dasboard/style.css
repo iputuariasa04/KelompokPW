@@ -1,0 +1,413 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.top {
+    position: fixed;
+    width: 100%;
+    z-index: 20;
+}
+
+/* Header */
+.header {
+    padding: 0 3%;
+    display: flex;
+    background-color: rgb(204, 204, 253);
+    justify-content: space-between;
+    align-items: center;
+    position: relative
+}
+
+.profil {
+    display: flex;
+    align-items: center;
+}
+
+.profil a {
+    text-decoration: none;
+    color: #000;
+    font-size: 18px;
+    padding-right: 7px;
+}
+
+.profil img {
+    width: 40px;
+    height: auto;
+    border: 2px solid rgb(55, 167, 55);
+    border-radius: 50%;
+}
+
+.profil input[type="checkbox"] {
+    position: absolute;
+    width: 28px;
+    height: 28px;
+    right: 3.5%;
+    opacity: 0;
+}
+
+.alert {
+    width: 250px;
+    height: 150px;
+    background-color: #fff;
+    border: 1px solid #000;
+    position: absolute;
+    top: 45px;
+    right: -20%;
+    border-radius: 15px 0 15px 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+    opacity: 0;
+}
+
+.alert a {
+    margin: 0 5px;
+}
+
+.alert button {
+    width: 100px;
+    height: 30px;
+    background-color: rgb(177, 177, 128);
+    border-radius: 10px;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.alert.efek {
+    right: 5%;
+    opacity: 1;
+}
+
+/* Akhir Header */
+
+/* Navbar */
+.navbar {
+    background-color: rgb(197, 197, 255);
+    padding: 7px 4%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu a {
+    padding: 5px 25px;
+    background-color: rgb(177, 177, 128);
+    border-radius: 7px;
+    text-decoration: none;
+    color: #fff;
+    margin: 0 8px;
+}
+
+.search {
+    display: flex;
+    text-align: center;
+}
+
+button {
+    background-color: rgb(197, 197, 255);
+    border: none;
+    padding-right: 7px;
+}
+
+button img {
+    width: 25px;
+    height: auto;
+}
+
+.search input {
+    border: 2px solid rgb(177, 177, 128);
+    border-radius: 10px;
+    background-color: none;
+    width: 250px;
+    outline: none;
+    text-align: center;
+}
+
+/* Akhir Navbar */
+
+/* Iklan */
+.iklan {
+    padding: 0 4%;
+    width: 100%;
+}
+
+.slider {
+    border-radius: 10px;
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    margin-top: 110px;
+}
+
+.slides {
+    width: 500%;
+    height: 500px;
+    display: flex;
+}
+
+.slides input {
+    display: none;
+}
+
+.slide {
+    width: 20%;
+    transition: 2s;
+}
+
+.slide img {
+    width: 100%;
+    height: 500px;
+}
+
+/* Css Untuk Manual Navigation */
+.navigation-manual {
+    position: absolute;
+    width: 99%;
+    display: flex;
+    justify-content: center;
+    margin-top: -280px;
+    margin-left: -40px;
+}
+
+.manual-btn {
+    border: 2px solid #40d3dc;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.manual-btn:not(:last-child) {
+    margin-right: 40px;
+}
+
+.manual-btn:hover {
+    background-color: #23e3c9;
+}
+
+#radio1:checked~.first {
+    margin-left: 0;
+}
+
+#radio2:checked~.first {
+    margin-left: -20.1%;
+}
+
+#radio3:checked~.first {
+    margin-left: -40.1%;
+}
+
+#radio4:checked~.first {
+    margin-left: -60.1%;
+}
+
+/* automatic navigation */
+.navigation-auto {
+    position: absolute;
+    display: flex;
+    width: 99%;
+    justify-content: center;
+    margin-top: 220px;
+    margin-left: -40px;
+}
+
+.navigation-auto div {
+    border: 2px solid #40d3dc;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.navigation-auto div:not(:last-child) {
+    margin-right: 40px;
+}
+
+#radio1:checked~.navigation-auto .auto-btn1 {
+    background-color: #40d3dc;
+}
+
+#radio2:checked~.navigation-auto .auto-btn2 {
+    background-color: #40d3dc;
+}
+
+#radio3:checked~.navigation-auto .auto-btn3 {
+    background-color: #40d3dc;
+}
+
+#radio4:checked~.navigation-auto .auto-btn4 {
+    background-color: #40d3dc;
+}
+
+/* Akhir Iklan */
+
+/* Content */
+.content {
+    padding: 30px 8%;
+}
+
+.row {
+    text-align: center;
+}
+
+.row .title {
+    color: rgb(124, 189, 124);
+    padding: 15px 0;
+}
+
+.box {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box .card {
+    position: relative;
+    width: 200px;
+    height: 275px;
+    border: 1px solid #000;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box .card .contentBx {
+    position: absolute;
+    bottom: -170px;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    z-index: 10;
+    backdrop-filter: blur(15px);
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.5s;
+}
+
+.box .card:hover .contentBx {
+    bottom: -10px;
+}
+
+.box .card .contentBx {
+    color: #fff;
+}
+
+.box .card .contentBx h3 {
+    margin-bottom: -10px;
+}
+
+.box .card .contentBx span {
+    font-size: 13px;
+}
+
+.box .card .contentBx .buy {
+    width: 100%;
+    height: 40px;
+    background-color: rgb(100, 182, 100);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box .card .contentBx .buy a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.box .card .contentBx .buy a:hover {
+    font-size: 17px;
+    color: rgb(58, 80, 58);
+}
+
+
+.imgBx img {
+    width: 200px;
+    height: auto;
+}
+
+/* Akhir Content */
+
+/* Footer */
+.footer {
+    width: 100%;
+    height: 50px;
+    /* margin-top: 100px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(204, 204, 253);
+}
+
+/* Pengaturan Col */
+[class*="col-"] {
+    float: left;
+}
+
+.col-1 {
+    width: 8.33%;
+}
+
+.col-2 {
+    width: 16.66%;
+}
+
+.col-3 {
+    width: 25%;
+}
+
+.col-4 {
+    width: 33.33%;
+}
+
+.col-5 {
+    width: 41.66%;
+}
+
+.col-6 {
+    width: 50%;
+}
+
+.col-7 {
+    width: 58.33%;
+}
+
+.col-8 {
+    width: 66.66%;
+}
+
+.col-9 {
+    width: 75%;
+}
+
+.col-10 {
+    width: 83.33%;
+}
+
+.col-11 {
+    width: 91.66%;
+}
+
+.col-12 {
+    width: 100%;
+}
