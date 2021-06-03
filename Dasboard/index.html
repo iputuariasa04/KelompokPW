@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dasboard</title>
+    <title>Document</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200&family=Pacifico&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
@@ -28,12 +30,20 @@
                 </div>
             </div>
             <div class="navbar">
-                <div class="menu">
-                    <a href="">Home</a>
-                    <a href="">Transaksi</a>
-                    <a href="">Tiket</a>
-                    <a href="">About</a>
+                <ul>
+                    <li><a href="">Home</a></li>
+                    <li><a href="">Transaksi</a></li>
+                    <li><a href="">Tiket</a></li>
+                    <li><a href="">About</a></li>
+                </ul>
+
+                <div class="menu-toggle">
+                    <input type="checkbox">
+                    <span></span>
+                    <span></span>
+                    <span></span>
                 </div>
+
                 <div class="search">
                     <button type="submit">
                         <img src="../img/search.png" alt="">
@@ -42,6 +52,7 @@
                 </div>
             </div>
         </div>
+
         <div class="iklan">
             <div class="slider">
                 <div class="slides">
@@ -88,9 +99,12 @@
             </div>
             <!-- Akhir slide gambar -->
         </div>
+
         <div class="content">
-            <div class="row">
+            <div class="row-title">
                 <h3 class="title">TIKET EVENT TERBARU</h3>
+            </div>
+            <div class="row">
                 <div class="col-3">
                     <div class="box">
                         <div class="card">
@@ -182,11 +196,19 @@
             </div>
         </div>
         <div class="footer">
-            <span>Copyright Tiket Store 2021</span>
+            <div class="boxFooter">
+                <span>Copyright Tiket Store 2021</span>
+            </div>
         </div>
     </div>
-
     <script>
+        const menuToggle = document.querySelector('.menu-toggle input');
+        const nav = document.querySelector('.navbar ul');
+
+        menuToggle.addEventListener('click', function(){
+            nav.classList.toggle('menuSlide');
+        });
+
         const logout = document.querySelector('.profil input');
         const info = document.querySelector('.alert');
 
